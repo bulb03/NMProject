@@ -1,0 +1,73 @@
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+  
+  .letter {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300
+  }
+  
+  .dblue-bg {
+    background: #5a797e;
+  }
+  
+  .dblue-text {
+    color: #0471A6;
+    font-weight: bolder
+  }
+  
+  .shadow {
+    box-shadow: 1px 1px 4px 3px rgba(0, 0, 0, 0.1), 3px 6px 10px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info {
+    width: 100%;
+    min-height: 140px;
+    background: #e5e5e5;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .block {
+    width: 120px;
+    height: 140px;
+    text-align: center;
+  }
+  
+  .letter {
+      padding-top:20px;
+    }
+  
+  .arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    margin-left: 120px;
+    margin-top: 45px;
+  }
+  
+  .dblue-arrow {
+    border-left: 25px solid #5a797e;
+  }
+  
+  .text {
+    position: absolute;
+    padding-left: 165px;
+    text-align: justify;
+    min-height: 100px;
+  }
+  
+  .text h4 {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #c0c1c3;
+  }
+  
+  .text p {
+    margin-top: 15px;
+    font-size: 16px;
+  }

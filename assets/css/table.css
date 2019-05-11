@@ -1,0 +1,45 @@
+
+
+table.table-radius {  
+    background:white; 
+    border:#009688 3px solid;  
+    -moz-border-radius:10px;  
+    -webkit-border-radius:10px;  
+    border-radius:10px;
+    border-collapse:unset
+  }
+  
+  .table.table-radius > thead > tr > th,
+  .table.table-radius > tbody > tr > th,
+  .table.table-radius > tfoot > tr > th,
+  .table.table-radius > thead > tr > td,
+  .table.table-radius > tbody > tr > td,
+  .table.table-radius > tfoot > tr > td {
+    vertical-align: middle;
+    border-top-color:#009688;
+    color: #595757;
+  }
+  
+  .table.table-radius > thead > tr > th {
+    border-bottom: 0;
+    border-radius: 7px 7px 0 0;
+    background: #B2EBF2;
+    font-size: 22px;
+    text-align:center;
+  }
+  
+  .table-radius td {  
+    background:#fff;
+    font-size: 14px;
+    font-weight: 900;
+  }  
+  
+  .table-radius tr:last-child td:first-child {  
+    -moz-border-radius-bottomleft:10px;  
+    -webkit-border-bottom-left-radius:10px;  
+    border-bottom-left-radius:10px}  
+  
+  .table-radius tr:last-child td:last-child {  
+    -moz-border-radius-bottomright:10px;  
+    -webkit-border-bottom-right-radius:10px;  
+    border-bottom-right-radius:10px}
