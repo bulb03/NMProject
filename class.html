@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>夜市學堂 - 上課報到</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="text/javascript" src="./assets/js/llqrcode.js"></script>
+    <script type="text/javascript" src="./assets/js/webqr.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="main" >
+        <div class="col" id="mainbody">
+          <div class="col-xs-12" id="outdiv"></div>
+          <div class="alert alert-primary" role="alert">
+          <div class="col-xs-12 text-center" id="result">
+            <p id="keyword" value="abcde">--掃描中--</p>
+            <input id="keyword2" value="abcde" type="hidden">
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="button_place">
+            <button type="button" class="btn btn-info btn-lg btn-block"><a class="return" href=".">回首頁</a></button>
+        </div>
+      </div>
+    </div>    <canvas id="qr-canvas" width="800" height="600"></canvas>
+    <script type="text/javascript">
+    load();
+    </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  </body>
+  <script>
+  function judge_time(a,b){
+    var today = new Date();
+
+    var year = today.getFullYear();
+    var month = (today.getMonth()+1);
+    var day = today.getDate();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
+
+    var now_time = year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
+
+    if(Date.parse(now_time).valueOf()>Date.parse(a).valueOf() && Date.parse(now_time).valueOf()<Date.parse(b).valueOf()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  function print_name(){
+    var ans = document.getElementById("keyword").getAttribute("value");
+    var ans2 = document.getElementById("keyword2").getAttribute("value");
+    $.ajax({
+        type: "GET",
+        url: "./test.php",
+        // dataType: "text",
+        data: {'id':ans,'name':ans2},
+        cache: false,
+        success: function(response){
+          window.alert(response);
+          window.location = './index.php';          
+        },
+        error: function(xhr){
+          window.alert(xhr);
+          location.reload();
+        }
+      });
+    }
+  </script>
+</html>
